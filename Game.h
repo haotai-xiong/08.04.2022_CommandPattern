@@ -1,12 +1,10 @@
 #pragma once
-
-#include <SFML/Graphics.hpp>
-#include "ScreenSize.h"
+#include "Bot.h"
 
 /// <summary>
-/// @author RP
-/// @date September 2020
-/// @version 1.0
+/// @author Haotai Xiong
+/// @date 08.04.2022
+/// @version 0.1
 /// 
 /// </summary>
 
@@ -45,7 +43,7 @@ protected:
 	/// @brief Placeholder to perform updates to all game objects.
 	/// </summary>
 	/// <param name="time">update delta time</param>
-	void update(double dt);
+	void update(sf::Event& t_event,double dt);
 
 	/// <summary>
 	/// @brief Draws the background and foreground game objects in the SFML window.
@@ -58,7 +56,7 @@ protected:
 	/// Allows window to function and exit. 
 	/// Events are passed on to the Game::processGameEvents() method.
 	/// </summary>	
-	void processEvents();
+	void processEvents(sf::Event& t_event);
 
 	/// <summary>
 	/// @brief Handles all user input.
@@ -68,4 +66,6 @@ protected:
 
 	// main window
 	sf::RenderWindow m_window;
+	// bot
+	Bot m_bot;
 };
